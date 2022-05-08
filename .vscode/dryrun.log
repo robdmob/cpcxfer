@@ -1,0 +1,15 @@
+make.exe all --dry-run --keep-going --print-directory
+make.exe: Entering directory `m:/CloudStation/Projects/GCC Projects/cpcxfer'
+gcc -O2  -W -I. -c main.c -o main.o
+ 
+gcc -O2  -W -I. -c http.c -o http.o
+ 
+gcc -O2  -W -I. -c cpc.c -o cpc.o
+ 
+gcc -O2  -W -I. -c parse.c -o parse.o
+gcc -o "xfer" main.o http.o cpc.o parse.o -s -Wl -lwsock32
+strip xfer
+del main.o http.o cpc.o parse.o
+ 
+make.exe: Leaving directory `m:/CloudStation/Projects/GCC Projects/cpcxfer'
+ 
